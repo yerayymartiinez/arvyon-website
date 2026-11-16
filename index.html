@@ -15,24 +15,25 @@
   <title>ARVYON — AI & Automation Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
+  <!-- ========== CANVAS BACKGROUND ========== -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- ========== HEADER ========== -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#inicio" class="header__logo" aria-label="ARVYON — Inicio">
         <img src="assets/img/logo-arvyon.png" alt="ARVYON AI & Automation Studio" class="header__logo-img">
       </a>
-
       <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
         <span class="header__menu-bar"></span>
         <span class="header__menu-bar"></span>
         <span class="header__menu-bar"></span>
       </button>
-
       <nav class="header__nav" id="mainNav" aria-label="Navegación principal">
         <ul class="header__nav-list">
           <li><a href="#inicio" class="header__nav-link">Inicio</a></li>
@@ -42,205 +43,257 @@
           <li><a href="#sobre-nosotros" class="header__nav-link">Sobre nosotros</a></li>
           <li><a href="#contacto" class="header__nav-link">Contacto</a></li>
         </ul>
-        <a href="#contacto" class="btn btn--primary header__cta">Solicitar presupuesto</a>
+        <a href="#contacto" class="btn btn--glow header__cta">Solicitar presupuesto</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- ===================== HERO ===================== -->
+    <!-- ========== HERO ========== -->
     <section class="hero" id="inicio">
+      <!-- Gradient orbs -->
+      <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+      <div class="hero__grid-overlay" aria-hidden="true"></div>
+
       <div class="container hero__inner">
-        <div class="hero__content">
-          <h1 class="hero__title">Menos tareas manuales.<br>Más crecimiento.</h1>
-          <p class="hero__subtitle">Diseñamos sistemas inteligentes y automatizaciones que ayudan a tu negocio a trabajar mejor, ahorrar tiempo y crecer.</p>
-          <div class="hero__actions">
-            <a href="#soluciones" class="btn btn--primary">Descubrir soluciones</a>
-            <a href="#contacto" class="btn btn--outline">Contactar</a>
+        <div class="hero__content" data-reveal>
+          <div class="hero__badge" data-reveal data-delay="100">
+            <span class="hero__badge-dot"></span>
+            AI & Automation Studio
+          </div>
+          <h1 class="hero__title" data-reveal data-delay="200">
+            Menos tareas manuales.<br>
+            <span class="hero__title-accent">Más crecimiento.</span>
+          </h1>
+          <p class="hero__subtitle" data-reveal data-delay="300">Diseñamos sistemas inteligentes y automatizaciones que ayudan a tu negocio a trabajar mejor, ahorrar tiempo y crecer.</p>
+          <div class="hero__actions" data-reveal data-delay="400">
+            <a href="#soluciones" class="btn btn--glow">
+              <span>Descubrir soluciones</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#contacto" class="btn btn--glass">Solicitar presupuesto</a>
           </div>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-          <div class="flow-diagram">
-            <!-- Nodo: Entrada -->
-            <div class="flow-node flow-node--input">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+
+        <div class="hero__visual" data-reveal data-delay="500" aria-hidden="true">
+          <div class="hero__visual-container" id="heroVisual">
+            <!-- Central hub -->
+            <div class="hub">
+              <div class="hub__core">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div class="hub__ring hub__ring--1"></div>
+              <div class="hub__ring hub__ring--2"></div>
+              <div class="hub__ring hub__ring--3"></div>
+            </div>
+            <!-- Floating nodes -->
+            <div class="float-node float-node--1">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
               <span>Datos</span>
             </div>
-            <!-- Conector -->
-            <div class="flow-connector">
-              <div class="flow-connector__line"></div>
-              <svg class="flow-connector__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <div class="float-node float-node--2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/></svg>
+              <span>IA</span>
             </div>
-            <!-- Nodo: Proceso -->
-            <div class="flow-node flow-node--process">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              <span>Automatización</span>
+            <div class="float-node float-node--3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+              <span>Auto</span>
             </div>
-            <!-- Conector -->
-            <div class="flow-connector">
-              <div class="flow-connector__line"></div>
-              <svg class="flow-connector__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <div class="float-node float-node--4">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Output</span>
             </div>
-            <!-- Nodo: IA -->
-            <div class="flow-node flow-node--ai">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/><path d="M4.22 19.78l2.83-2.83"/><path d="M16.95 7.05l2.83-2.83"/></svg>
-              <span>Análisis IA</span>
-            </div>
-            <!-- Conector -->
-            <div class="flow-connector">
-              <div class="flow-connector__line"></div>
-              <svg class="flow-connector__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
-            <!-- Nodo: Resultado -->
-            <div class="flow-node flow-node--output">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span>Resultados</span>
-            </div>
+            <!-- Connection lines (SVG) -->
+            <svg class="hub__connections" viewBox="0 0 400 400" fill="none">
+              <line x1="200" y1="200" x2="80" y2="80" stroke="url(#lineGrad)" stroke-width="1" opacity="0.4"/>
+              <line x1="200" y1="200" x2="320" y2="80" stroke="url(#lineGrad)" stroke-width="1" opacity="0.4"/>
+              <line x1="200" y1="200" x2="80" y2="320" stroke="url(#lineGrad)" stroke-width="1" opacity="0.4"/>
+              <line x1="200" y1="200" x2="320" y2="320" stroke="url(#lineGrad)" stroke-width="1" opacity="0.4"/>
+              <defs>
+                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#176BFF"/>
+                  <stop offset="100%" stop-color="#713CFF"/>
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
         </div>
       </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" data-reveal data-delay="800">
+        <div class="hero__scroll-line"></div>
+      </div>
     </section>
 
-    <!-- ===================== SERVICIOS ===================== -->
+    <!-- ========== SERVICIOS ========== -->
     <section class="services" id="servicios">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="section-label">Servicios</span>
           <h2 class="section-title">Lo que hacemos</h2>
+          <p class="section-desc">Soluciones tecnológicas diseñadas para transformar la forma en que trabaja tu negocio.</p>
         </div>
         <div class="services__grid">
-          <!-- Servicio 1 -->
-          <article class="service-card">
-            <div class="service-card__icon">
+          <article class="glass-card" data-reveal data-delay="100">
+            <div class="glass-card__glow glass-card__glow--blue"></div>
+            <div class="glass-card__icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/>
               </svg>
             </div>
-            <h3 class="service-card__title">Automatización de procesos</h3>
-            <p class="service-card__desc">Automatizamos tareas repetitivas y conectamos herramientas para mejorar la eficiencia de los negocios.</p>
-            <a href="#contacto" class="service-card__link">
+            <h3 class="glass-card__title">Automatización de procesos</h3>
+            <p class="glass-card__desc">Automatizamos tareas repetitivas y conectamos herramientas para mejorar la eficiencia de los negocios.</p>
+            <a href="#contacto" class="glass-card__link">
               Conocer más
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </article>
-          <!-- Servicio 2 -->
-          <article class="service-card">
-            <div class="service-card__icon service-card__icon--violet">
+
+          <article class="glass-card" data-reveal data-delay="200">
+            <div class="glass-card__glow glass-card__glow--violet"></div>
+            <div class="glass-card__icon glass-card__icon--violet">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 10v2"/><circle cx="12" cy="16" r="2"/><path d="M6 20a6 6 0 0 1 12 0"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 6.34l1.41-1.41"/>
+                <circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/><path d="M4.22 19.78l2.83-2.83"/><path d="M16.95 7.05l2.83-2.83"/>
               </svg>
             </div>
-            <h3 class="service-card__title">Soluciones con IA</h3>
-            <p class="service-card__desc">Integramos inteligencia artificial en procesos empresariales para agilizar tareas y gestionar información.</p>
-            <a href="#contacto" class="service-card__link">
+            <h3 class="glass-card__title">Soluciones con IA</h3>
+            <p class="glass-card__desc">Integramos inteligencia artificial en procesos empresariales para agilizar tareas y gestionar información.</p>
+            <a href="#contacto" class="glass-card__link">
               Conocer más
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </article>
-          <!-- Servicio 3 -->
-          <article class="service-card">
-            <div class="service-card__icon">
+
+          <article class="glass-card" data-reveal data-delay="300">
+            <div class="glass-card__glow glass-card__glow--blue"></div>
+            <div class="glass-card__icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <h3 class="service-card__title">Gestión de clientes</h3>
-            <p class="service-card__desc">Creamos sistemas para organizar solicitudes, contactos y oportunidades comerciales.</p>
-            <a href="#contacto" class="service-card__link">
+            <h3 class="glass-card__title">Gestión de clientes</h3>
+            <p class="glass-card__desc">Creamos sistemas para organizar solicitudes, contactos y oportunidades comerciales.</p>
+            <a href="#contacto" class="glass-card__link">
               Conocer más
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </article>
-          <!-- Servicio 4 -->
-          <article class="service-card">
-            <div class="service-card__icon service-card__icon--violet">
+
+          <article class="glass-card" data-reveal data-delay="400">
+            <div class="glass-card__glow glass-card__glow--violet"></div>
+            <div class="glass-card__icon glass-card__icon--violet">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8h2m2 0h2m2 0h2"/>
+                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8h2m2 0h2m2 0h2"/>
               </svg>
             </div>
-            <h3 class="service-card__title">Integraciones digitales</h3>
-            <p class="service-card__desc">Conectamos diferentes plataformas y aplicaciones para centralizar procesos.</p>
-            <a href="#contacto" class="service-card__link">
+            <h3 class="glass-card__title">Integraciones digitales</h3>
+            <p class="glass-card__desc">Conectamos diferentes plataformas y aplicaciones para centralizar procesos.</p>
+            <a href="#contacto" class="glass-card__link">
               Conocer más
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===================== BENEFICIOS / SOLUCIONES ===================== -->
+    <!-- ========== SOLUCIONES / BENEFICIOS ========== -->
     <section class="benefits" id="soluciones">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="section-label">Soluciones</span>
           <h2 class="section-title">Tu negocio puede funcionar mejor.</h2>
+          <p class="section-desc">Cada solución que diseñamos está pensada para generar un impacto real en tu negocio.</p>
         </div>
         <div class="benefits__grid">
-          <div class="benefit-item">
-            <div class="benefit-item__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="benefit-card" data-reveal data-delay="100">
+            <div class="benefit-card__icon-wrap">
+              <div class="benefit-card__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
             </div>
-            <h3 class="benefit-item__title">Ahorra tiempo</h3>
-            <p class="benefit-item__desc">Elimina tareas manuales y dedica tu tiempo a lo que realmente importa para tu negocio.</p>
+            <h3 class="benefit-card__title">Ahorra tiempo</h3>
+            <p class="benefit-card__desc">Elimina tareas manuales y dedica tu tiempo a lo que realmente importa para tu negocio.</p>
           </div>
-          <div class="benefit-item">
-            <div class="benefit-item__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <div class="benefit-card" data-reveal data-delay="200">
+            <div class="benefit-card__icon-wrap">
+              <div class="benefit-card__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
             </div>
-            <h3 class="benefit-item__title">Reduce tareas repetitivas</h3>
-            <p class="benefit-item__desc">Automatiza los procesos recurrentes que consumen recursos de tu equipo cada día.</p>
+            <h3 class="benefit-card__title">Reduce tareas repetitivas</h3>
+            <p class="benefit-card__desc">Automatiza los procesos recurrentes que consumen recursos de tu equipo cada día.</p>
           </div>
-          <div class="benefit-item">
-            <div class="benefit-item__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <div class="benefit-card" data-reveal data-delay="300">
+            <div class="benefit-card__icon-wrap">
+              <div class="benefit-card__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              </div>
             </div>
-            <h3 class="benefit-item__title">Mejora la organización</h3>
-            <p class="benefit-item__desc">Centraliza información y procesos en un sistema ordenado y accesible.</p>
+            <h3 class="benefit-card__title">Mejora la organización</h3>
+            <p class="benefit-card__desc">Centraliza información y procesos en un sistema ordenado y accesible.</p>
           </div>
-          <div class="benefit-item">
-            <div class="benefit-item__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <div class="benefit-card" data-reveal data-delay="400">
+            <div class="benefit-card__icon-wrap">
+              <div class="benefit-card__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
             </div>
-            <h3 class="benefit-item__title">Optimiza procesos</h3>
-            <p class="benefit-item__desc">Conecta herramientas y flujos de trabajo para que tu negocio funcione de manera fluida.</p>
+            <h3 class="benefit-card__title">Optimiza procesos</h3>
+            <p class="benefit-card__desc">Conecta herramientas y flujos de trabajo para que tu negocio funcione de manera fluida.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== PROCESO ===================== -->
+    <!-- ========== PROCESO ========== -->
     <section class="process" id="proceso">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="section-label">Proceso</span>
           <h2 class="section-title">De la idea a la automatización.</h2>
+          <p class="section-desc">Un método claro y eficiente para transformar tus procesos.</p>
         </div>
         <div class="process__timeline">
-          <div class="process-step">
-            <div class="process-step__number">01</div>
-            <div class="process-step__content">
+          <div class="process__line" aria-hidden="true">
+            <div class="process__line-fill" id="processLineFill"></div>
+          </div>
+          <div class="process-step" data-reveal data-delay="100">
+            <div class="process-step__marker">
+              <span class="process-step__number">01</span>
+            </div>
+            <div class="process-step__card">
               <h3 class="process-step__title">Análisis</h3>
               <p class="process-step__desc">Estudiamos las necesidades y los procesos del negocio.</p>
             </div>
           </div>
-          <div class="process-step">
-            <div class="process-step__number">02</div>
-            <div class="process-step__content">
+          <div class="process-step" data-reveal data-delay="200">
+            <div class="process-step__marker process-step__marker--violet">
+              <span class="process-step__number">02</span>
+            </div>
+            <div class="process-step__card">
               <h3 class="process-step__title">Estrategia</h3>
               <p class="process-step__desc">Diseñamos una solución adaptada a sus necesidades.</p>
             </div>
           </div>
-          <div class="process-step">
-            <div class="process-step__number">03</div>
-            <div class="process-step__content">
+          <div class="process-step" data-reveal data-delay="300">
+            <div class="process-step__marker">
+              <span class="process-step__number">03</span>
+            </div>
+            <div class="process-step__card">
               <h3 class="process-step__title">Desarrollo</h3>
               <p class="process-step__desc">Construimos, integramos y probamos la automatización.</p>
             </div>
           </div>
-          <div class="process-step">
-            <div class="process-step__number">04</div>
-            <div class="process-step__content">
+          <div class="process-step" data-reveal data-delay="400">
+            <div class="process-step__marker process-step__marker--violet">
+              <span class="process-step__number">04</span>
+            </div>
+            <div class="process-step__card">
               <h3 class="process-step__title">Implementación</h3>
               <p class="process-step__desc">Entregamos el sistema y ofrecemos soporte.</p>
             </div>
@@ -249,84 +302,117 @@
       </div>
     </section>
 
-    <!-- ===================== SOBRE NOSOTROS ===================== -->
+    <!-- ========== SOBRE NOSOTROS ========== -->
     <section class="about" id="sobre-nosotros">
       <div class="container">
         <div class="about__inner">
-          <div class="about__content">
+          <div class="about__content" data-reveal>
             <span class="section-label">Sobre ARVYON</span>
             <h2 class="section-title">Tecnología que trabaja contigo.</h2>
             <p class="about__text">En ARVYON creemos que la tecnología debe simplificar el trabajo, no complicarlo. Creamos soluciones digitales que permiten a los negocios aprovechar la automatización y la inteligencia artificial de forma práctica, eficiente y accesible.</p>
-            <a href="#contacto" class="btn btn--primary">Hablemos</a>
+            <div class="about__features">
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <span>Soluciones a medida</span>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <span>Tecnología accesible</span>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <span>Soporte continuo</span>
+              </div>
+            </div>
+            <a href="#contacto" class="btn btn--glow">Hablemos</a>
           </div>
-          <div class="about__visual" aria-hidden="true">
-            <div class="about__grid-art">
-              <div class="about__grid-cell about__grid-cell--accent"></div>
-              <div class="about__grid-cell"></div>
-              <div class="about__grid-cell"></div>
-              <div class="about__grid-cell about__grid-cell--accent-v"></div>
-              <div class="about__grid-cell about__grid-cell--accent-v"></div>
-              <div class="about__grid-cell"></div>
-              <div class="about__grid-cell"></div>
-              <div class="about__grid-cell about__grid-cell--accent"></div>
-              <div class="about__grid-cell"></div>
+          <div class="about__visual" data-reveal data-delay="200" aria-hidden="true">
+            <div class="about__graphic">
+              <div class="about__graphic-grid">
+                <div class="about__cell about__cell--glow"></div>
+                <div class="about__cell"></div>
+                <div class="about__cell about__cell--glow-v"></div>
+                <div class="about__cell about__cell--glow-v"></div>
+                <div class="about__cell about__cell--glow"></div>
+                <div class="about__cell"></div>
+                <div class="about__cell"></div>
+                <div class="about__cell about__cell--glow"></div>
+                <div class="about__cell about__cell--glow-v"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CONTACTO ===================== -->
+    <!-- ========== CONTACTO ========== -->
     <section class="contact" id="contacto">
       <div class="container">
         <div class="contact__inner">
-          <div class="contact__info">
+          <div class="contact__info" data-reveal>
             <span class="section-label">Contacto</span>
             <h2 class="section-title">Cuéntanos qué necesitas.</h2>
             <p class="contact__desc">Completa el formulario y nos pondremos en contacto contigo para analizar tu proyecto y encontrar la mejor solución.</p>
             <div class="contact__details">
               <div class="contact__detail-item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <div class="contact__detail-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
                 <span>info@arvyon.com</span>
               </div>
             </div>
           </div>
-          <div class="contact__form-wrapper">
+          <div class="contact__form-wrapper" data-reveal data-delay="200">
             <form class="contact-form" id="contactForm" novalidate>
-              <div class="contact-form__group">
-                <label for="nombre" class="contact-form__label">Nombre <span aria-hidden="true">*</span></label>
-                <input type="text" id="nombre" name="nombre" class="contact-form__input" required autocomplete="name" placeholder="Tu nombre">
-                <span class="contact-form__error" id="nombreError">Por favor, introduce tu nombre.</span>
+              <div class="contact-form__row">
+                <div class="contact-form__group">
+                  <label for="nombre" class="contact-form__label">Nombre <span>*</span></label>
+                  <input type="text" id="nombre" name="nombre" class="contact-form__input" required autocomplete="name" placeholder="Tu nombre">
+                  <span class="contact-form__error" id="nombreError">Por favor, introduce tu nombre.</span>
+                </div>
+                <div class="contact-form__group">
+                  <label for="empresa" class="contact-form__label">Empresa</label>
+                  <input type="text" id="empresa" name="empresa" class="contact-form__input" autocomplete="organization" placeholder="Nombre de tu empresa">
+                </div>
               </div>
-              <div class="contact-form__group">
-                <label for="empresa" class="contact-form__label">Empresa</label>
-                <input type="text" id="empresa" name="empresa" class="contact-form__input" autocomplete="organization" placeholder="Nombre de tu empresa">
-              </div>
-              <div class="contact-form__group">
-                <label for="email" class="contact-form__label">Correo electrónico <span aria-hidden="true">*</span></label>
-                <input type="email" id="email" name="email" class="contact-form__input" required autocomplete="email" placeholder="tu@correo.com">
-                <span class="contact-form__error" id="emailError">Introduce un correo electrónico válido.</span>
-              </div>
-              <div class="contact-form__group">
-                <label for="servicio" class="contact-form__label">Servicio de interés</label>
-                <select id="servicio" name="servicio" class="contact-form__input contact-form__select">
-                  <option value="" disabled selected>Selecciona un servicio</option>
-                  <option value="automatizacion">Automatización de procesos</option>
-                  <option value="ia">Soluciones con IA</option>
-                  <option value="gestion">Gestión de clientes</option>
-                  <option value="integraciones">Integraciones digitales</option>
-                  <option value="otro">Otro</option>
-                </select>
+              <div class="contact-form__row">
+                <div class="contact-form__group">
+                  <label for="email" class="contact-form__label">Correo electrónico <span>*</span></label>
+                  <input type="email" id="email" name="email" class="contact-form__input" required autocomplete="email" placeholder="tu@correo.com">
+                  <span class="contact-form__error" id="emailError">Introduce un correo electrónico válido.</span>
+                </div>
+                <div class="contact-form__group">
+                  <label for="servicio" class="contact-form__label">Servicio de interés</label>
+                  <select id="servicio" name="servicio" class="contact-form__input contact-form__select">
+                    <option value="" disabled selected>Selecciona un servicio</option>
+                    <option value="automatizacion">Automatización de procesos</option>
+                    <option value="ia">Soluciones con IA</option>
+                    <option value="gestion">Gestión de clientes</option>
+                    <option value="integraciones">Integraciones digitales</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
               </div>
               <div class="contact-form__group contact-form__group--full">
                 <label for="mensaje" class="contact-form__label">Descripción del proyecto</label>
                 <textarea id="mensaje" name="mensaje" class="contact-form__input contact-form__textarea" rows="4" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
               </div>
               <div class="contact-form__group contact-form__group--full">
-                <button type="submit" class="btn btn--primary btn--full">Enviar solicitud</button>
+                <button type="submit" class="btn btn--glow btn--full" id="submitBtn">
+                  <span class="btn__text">Enviar solicitud</span>
+                  <span class="btn__loader" aria-hidden="true"></span>
+                </button>
               </div>
               <div class="contact-form__success" id="formSuccess" role="alert">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <div class="contact-form__success-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
                 <p><strong>Solicitud enviada correctamente.</strong><br>Nos pondremos en contacto contigo pronto.</p>
               </div>
             </form>
@@ -336,7 +422,7 @@
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
